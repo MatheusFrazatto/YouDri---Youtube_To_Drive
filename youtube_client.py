@@ -1,5 +1,4 @@
 import yt_dlp
-# By Matheus Frazatto Dias
 
 
 class YouTubeClient:
@@ -36,3 +35,4 @@ class YouTubeClient:
         except Exception as e:
             print(f"\nOcorreu um erro ao obter o título: {e}")
             return "Sem título"
+
