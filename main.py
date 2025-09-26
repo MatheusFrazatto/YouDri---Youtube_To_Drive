@@ -1,7 +1,6 @@
 import os
 from youtube_client import YouTubeClient
 from google_drive_client import GoogleDriveClient
-# By Matheus Frazatto Dias
 
 
 def main():
@@ -54,3 +53,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
