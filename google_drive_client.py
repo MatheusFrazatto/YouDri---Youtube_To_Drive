@@ -10,7 +10,6 @@ from googleapiclient.http import MediaFileUpload
 
 class GoogleDriveClient:
     '''Cliente para interagir com o Google Drive, incluindo autenticação e upload de arquivos.'''
-
     def __init__(self, credentials_file="credentials.json"):
         self.scopes = ["https://www.googleapis.com/auth/drive.file"]
         self.credentials_file = credentials_file
@@ -65,4 +64,5 @@ class GoogleDriveClient:
         except HttpError as error:
             print(f"Ocorreu um erro durante o upload: {error}")
             return None
+
 
