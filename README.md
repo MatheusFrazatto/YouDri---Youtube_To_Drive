@@ -16,7 +16,7 @@ Este projeto foi desenvolvido como uma solução para o processo seltivo da Tapp
 
 ---
 
-## 🛠️ Configuração e Instalação
+## Configuração e Instalação
 
 Siga os passos abaixo para configurar e executar o projeto em sua máquina local.
 
