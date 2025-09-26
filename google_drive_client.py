@@ -6,7 +6,6 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 from googleapiclient.http import MediaFileUpload
-# By Matheus Frazatto Dias
 
 
 class GoogleDriveClient:
@@ -66,3 +65,4 @@ class GoogleDriveClient:
         except HttpError as error:
             print(f"Ocorreu um erro durante o upload: {error}")
             return None
+
