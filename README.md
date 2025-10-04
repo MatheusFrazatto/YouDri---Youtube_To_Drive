@@ -2,7 +2,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3.7+-blue?style=for-the-badge&logo=python)
 ![yt-dlp](https://img.shields.io/badge/yt--dlp-FF0000?style=for-the-badge&logo=youtube)
-![Google Drive](https://img.shields.io/badge/Google_Drive-4285F4?style=for-the-badge&logo=google-drive)
+![Google Drive](https://img.shields.io/badge/Google%20Drive-4285F4?style=for-the-badge&logo=googledrive&logoColor=white)
 
 ## 📖 Sobre o Projeto
 
