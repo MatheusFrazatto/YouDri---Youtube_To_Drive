@@ -1,68 +1,86 @@
-# YouDri - YouTube para Google Drive
+# 🚀 YouDri - YouTube to Google Drive Automator
 
-Script de automação em Python que baixa um vídeo de uma URL do YouTube, faz o upload diretamente para a conta do Google Drive do usuário e, em seguida, apaga o arquivo local para economizar espaço em disco.
+![Python](https://img.shields.io/badge/Python-3.7+-blue?style=for-the-badge&logo=python)
+![yt-dlp](https://img.shields.io/badge/yt--dlp-FF0000?style=for-the-badge&logo=youtube)
+![Google Drive](https://img.shields.io/badge/Google_Drive-4285F4?style=for-the-badge&logo=google-drive)
 
----
+## 📖 Sobre o Projeto
 
-## Funcionalidades Principais
+YouDri é uma aplicação de console (CLI) robusta desenvolvida em Python que automatiza o processo de baixar um vídeo de uma URL do YouTube e enviá-lo diretamente para a sua conta do Google Drive.
 
-* **Interface de Menu Interativa:** Um menu simples no terminal guia o usuário através das opções.
-* **Confirmação de Título:** Antes de iniciar o download, o script busca o título do vídeo e pede a confirmação do usuário para evitar erros de URL.
-* **Loop de Execução Contínuo:** Permite baixar e enviar múltiplos vídeos em sequência sem precisar reiniciar o programa.
+O projeto foi construído do zero com foco em boas práticas de arquitetura de software, incluindo uma estrutura orientada a objetos com separação de responsabilidades, uma experiência de usuário interativa e um tratamento de erros robusto.
+
+## ✨ Funcionalidades
+
+* **Interface Interativa:** Um menu simples e claro no terminal guia o usuário durante todo o processo.
+* **Confirmação de Título:** Antes de iniciar o download, o script busca e exibe o título do vídeo para confirmação, prevenindo o download de vídeos incorretos.
+* **Fluxo Contínuo:** Permite baixar e enviar múltiplos vídeos em sequência sem a necessidade de reiniciar a aplicação.
 * **Autenticação Segura:** Utiliza o fluxo OAuth2 padrão do Google para garantir um acesso seguro à conta do Drive, criando um token de autorização para sessões futuras.
-* **Limpeza Automática:** O arquivo de vídeo local é removido automaticamente após o upload bem-sucedido, mantendo o diretório do projeto limpo.
+* **Limpeza Automática:** Após um upload bem-sucedido, o arquivo de vídeo local é removido automaticamente para economizar espaço em disco.
 
----
+## 🛠️ Stack de Tecnologias
 
-## Configuração e Instalação
+* **Linguagem:** Python 3.7+
+* **Ambiente:** venv
+* **Download de Vídeo:** yt-dlp
+* **API do Google:** google-api-python-client
+* **Autenticação OAuth2:** google-auth-oauthlib
 
-Siga os passos abaixo para configurar e executar o projeto em sua máquina local.
+## 🚀 Como Começar
+
+Siga os passos abaixo para configurar e executar o projeto localmente.
 
 ### Pré-requisitos
 
-* Python 3.13.5.
-* OBS: O script foi desenvolvido utilizando o ambiente venv do Python.
+Você precisará ter o seguinte software instalado em sua máquina:
+* Python - Versão 3.7 ou superior.
+* pip (gerenciador de pacotes do Python).
 
-### 1. Instalar as Dependências
+### Configuração
 
-Este projeto utiliza as bibliotecas listadas no arquivo `requirements.txt`. Para instalá-las, execute:
+1.  **Clone o repositório:**
+    ```sh
+    git clone [https://github.com/MatheusFrazatto/YouDri---Youtube_To_Drive.git](https://github.com/MatheusFrazatto/YouDri---Youtube_To_Drive.git)
+    ```
+2.  **Navegue até a pasta do projeto:**
+    ```sh
+    cd YouDri---Youtube_To_Drive
+    ```
+3.  **Crie e ative um ambiente virtual:**
+    * **Windows:**
+        ```sh
+        python -m venv venv
+        .\venv\Scripts\activate
+        ```
+    * **macOS / Linux:**
+        ```sh
+        python3 -m venv venv
+        source venv/bin/activate
+        ```
+4.  **Instale as dependências:**
+    ```sh
+    pip install -r requirements.txt
+    ```
+5.  **Configure a API do Google Drive:**
+    * Acesse o [Google Cloud Console](https://console.cloud.google.com/) e crie um novo projeto.
+    * Procure e ative a **"Google Drive API"**.
+    * Vá para **"Credenciais"** > **"+ CRIAR CREDENCIAIS"** > **"ID do cliente OAuth"**.
+    * Configure a **"Tela de permissão OAuth"** como **"Externo"** e preencha as informações básicas.
+    * Selecione o tipo de aplicativo como **"Aplicativo para computador"**.
+    * Faça o download do arquivo JSON. **Renomeie-o para `credentials.json`** e coloque-o na pasta raiz do projeto.
+    * Na "Tela de permissão OAuth", vá para **"Testadores"** e adicione seu próprio e-mail como um usuário de teste.
 
-```bash
-pip install -r requirements.txt
-```
+### Executando a Aplicação
 
-### 2. Configurar a API do Google Drive
+1.  Com o ambiente virtual ativado, execute o script principal:
+    ```sh
+    python Main.py
+    ```
+2.  Siga as instruções do menu interativo no terminal.
 
-Para que o aplicativo possa acessar sua conta do Google Drive, você precisa de credenciais da API.
+#### Primeiro Uso
+Na primeira vez que você executar, uma aba do seu navegador será aberta para que você autorize o acesso à sua Conta Google. Siga os passos de autenticação para permitir que a aplicação funcione. Um arquivo `token.json` será criado para salvar sua autorização.
 
-1.  **Acesse o Google Cloud Console** e crie um novo projeto.
-2.  Procure e ative a **"Google Drive API"**.
-3.  Vá para a seção **"Credenciais"**, clique em **"+ CRIAR CREDENCIAIS"** e selecione **"ID do cliente OAuth"**.
-4.  Configure a **"Tela de permissão OAuth"**:
-    * Tipo de usuário: **Externo**.
-    * Preencha as informações básicas (nome do app, e-mail de suporte).
-5.  Na criação da credencial, selecione o tipo de aplicativo **"Aplicativo para computador"**.
-6.  Faça o download do arquivo JSON de credenciais. **Renomeie o arquivo para `credentials.json`** e coloque-o na pasta raiz do projeto.
-7.  Na "Tela de permissão OAuth", vá para a seção **"Testadores"** e adicione o seu endereço de e-mail como um usuário de teste autorizado.
+## 📜 Licença
 
----
-
-## Como Executar
-
-Siga as instruções do menu interativo no terminal.
-
-### Primeiro Uso
-
-Na primeira vez que você executar o script, uma aba do seu navegador será aberta para que você autorize o acesso à sua Conta Google.
-1.  Faça login na conta que você adicionou como testador.
-2.  Você verá um aviso de "App não verificado". Clique em **"Avançado"** e depois em **"Ir para [Nome do seu app] (não seguro)"**.
-3.  Clique em **"Permitir"**.
-4.  Após a autorização, um arquivo `token.json` será criado na pasta do projeto, e o script continuará o processo. Você não precisará fazer isso novamente nas próximas execuções.
-
----
-
-## Tecnologias Utilizadas
-
-* **Python**
-* **yt-dlp:** Para um download robusto e confiável de vídeos do YouTube.
-* **Google API Python Client:** Para interação com a API do Google Drive (autenticação e upload).
+Distribuído sob a licença MIT. Veja o arquivo `LICENSE` para mais informações.
